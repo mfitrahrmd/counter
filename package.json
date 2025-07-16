@@ -1,0 +1,21 @@
+{
+  "name": "counter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "jest --verbose false",
+    "check": "jest"
+  },
+  "devDependencies": {
+    "@swc/jest": "^0.2.39",
+    "@types/jest": "^30.0.0",
+    "esbuild-jest": "^0.5.0",
+    "jest": "^30.0.4",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  }
+}
