@@ -15,13 +15,9 @@ pipeline {
                 )
             }
         }
-        stage('Install') {
-            steps {
-                sh 'npm i'
-            }
-        }
         stage('Test') {
             steps {
+                sh 'npm i'
                 sh 'npm t'    // Replace with your test command
             }
         }
@@ -31,6 +27,7 @@ pipeline {
                 sh 'npm run build'   // Or npm run build, go build, etc.
             }
         }
+        
         // stage('Deploy') {
         //     steps {
         //         sh 'echo "Deploying to server..."'
