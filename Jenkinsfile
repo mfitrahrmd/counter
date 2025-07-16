@@ -1,6 +1,10 @@
 pipeline {
     agent any  // Run on any available Jenkins agent
 
+    tools {
+        nodejs 'node22'
+    }
+
     stages {
         stage('Checkout') {
             steps {
