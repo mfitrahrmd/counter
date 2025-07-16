@@ -15,15 +15,20 @@ pipeline {
                 )
             }
         }
-        stage('Build') {
+        stage('Install') {
             steps {
-                sh 'echo "Building project..."'
-                sh 'npm run build'   // Or npm run build, go build, etc.
+                sh 'npm i'
             }
         }
         stage('Test') {
             steps {
                 sh 'npm t'    // Replace with your test command
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'echo "Building project..."'
+                sh 'npm run build'   // Or npm run build, go build, etc.
             }
         }
         // stage('Deploy') {
