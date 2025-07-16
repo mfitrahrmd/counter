@@ -25,7 +25,7 @@ const setCounter = setupCounter()
 
 const counterButton = document.querySelector<HTMLButtonElement>('#counter')!
 
-counterButton.addEventListener('click', function (e) {
+counterButton.addEventListener('click', function () {
   const newCounter = setCounter((v) => v + 1)
   counterButton.textContent = newCounter.toString()
 })
