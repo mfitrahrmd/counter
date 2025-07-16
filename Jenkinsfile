@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/mfitrahrmd/jenkins.git'
+                git(
+                    url: 'https://github.com/mfitrahrmd/counter.git',
+                    branch: 'master',
+                    credentialsId: '1dac44bc-fdab-4ea6-b25a-09580e8001cd'
+                )
             }
         }
         stage('Build') {
@@ -18,13 +22,13 @@ pipeline {
                 sh 'npm t'    // Replace with your test command
             }
         }
-        stage('Deploy') {
-            steps {
-                sh 'echo "Deploying to server..."'
-                // Example: SSH to server and deploy
-                sh 'ssh user@server "cd /var/www/myapp && git pull && pm2 restart app"'
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         sh 'echo "Deploying to server..."'
+        //         // Example: SSH to server and deploy
+        //         sh 'ssh user@server "cd /var/www/myapp && git pull && pm2 restart app"'
+        //     }
+        // }
     }
 
     post {
